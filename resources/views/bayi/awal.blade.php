@@ -4,9 +4,9 @@
 
 <div class="panel panel-default">
 <div class="panel-heading">
-	<strong>Seluruh Data Jadwal Matakuliah</strong>
-	<a href="{{ url('dosen_matakuliah/tambah')}}" class="btn btn-xs btn-primary pull-right">
-	<i class="fa fa-plus"></i>Jadwal Matakuliah</a>
+	<strong>Seluruh Data Bayi</strong>
+	<a href="{{ url('bayi/tambah')}}" class="btn btn-xs btn-primary pull-right">
+	<i class="fa fa-plus"></i>Jadwal Bayi</a>
 
 		<div class="clearfix"></div>
 	</div>
@@ -14,31 +14,33 @@
 			<thead>
 					<tr>
 						<th>No.</th>
-						<th>Nama Dosen</th>
-						<th>Nip</th>
-						<th>Nama Matakuliah</th>
+						<th>Nama Bayi</th>
+						<th>Nama Ibu</th>
+						<th>Ruangan</th>
+						<th>Keterangan</th>
 						<th>Aksi</th>
 					</tr>
 			</thead>
 			<body>
 					<?php $x=1 ;?>
-					@foreach ($semuaDosenMatakuliah as $dosen_matakuliah)
+					@foreach ($semuaBayi as $bayi)
 						<tr>
 							<td>{{ $x++ }}</td>
-							<td>{{ $dosen_matakuliah->dosen->nama or 'nama kosong'}}</td>
-							<td>{{ $dosen_matakuliah->dosen->nip or 'nip kosong'}}</td>
-							<td>{{ $dosen_matakuliah->matakuliah->tittle or 'matakuliah kosong'}}</td>
+							<td>{{ $bayi->bayi->nama or 'nama kosong'}}</td>
+							<td>{{ $bayi->ibu->nama or 'nama kosong'}}</td>
+							<td>{{ $bayi->ruangan->nama or 'nama kosong'}}</td>
+							<td>{{ $bayi->keterangan->proses_lahir or 'keterangan kosong'}}</td>
 							
 							
 							<td>
 								<div class="btn-group" role="group">
-								<a href="{{url('dosen_matakuliah/edit/'.$dosen_matakuliah->id)}}" class="btn btn-warning btn xs" data-toggle="tooltip" data-placement="top" title="Ubah">
+								<a href="{{url('bayi/edit/'.$bayi->id)}}" class="btn btn-warning btn xs" data-toggle="tooltip" data-placement="top" title="Ubah">
 								<i class="fa fa-pencil"></i></a>
 
-								<a href="{{url('dosen_matakuliah/'.$dosen_matakuliah->id)}}" class="btn btn-info btn xs" data-toggle="tooltip" data-placement="top" title="Lihat">
+								<a href="{{url('bayi/'.$bayi->id)}}" class="btn btn-info btn xs" data-toggle="tooltip" data-placement="top" title="Lihat">
 								<i class="fa fa-eye"></i></a>
 
-								<a href="{{url('dosen_matakuliah/hapus/'.$dosen_matakuliah->id)}}" class="btn btn-danger btn xs" data-toggle="tooltip" data-placement="top" title="Hapus">
+								<a href="{{url('bayi/hapus/'.$bayi->id)}}" class="btn btn-danger btn xs" data-toggle="tooltip" data-placement="top" title="Hapus">
 								<i class="fa fa-remove"></i></a>
 						</div>
 

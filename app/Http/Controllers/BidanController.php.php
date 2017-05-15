@@ -6,10 +6,12 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Http\Requests\BidanRequest;
+
 use App\Bidan;
 
 
-class BidanController.php extends Controller
+class BidanController extends Controller
 {
     public function awal ()
     {

@@ -4,51 +4,45 @@
 
 <div class="panel panel-warning">
 <div class="panel-heading">
-	<strong><a href="{{ url('jadwal_matakuliah') }}">
+	<strong><a href="{{ url('jadwal') }}">
 	<i style="color:#8a6d3b" class="fa text-default fa-chevron-left"></i></a>
 	Detail Data Jadwal Matakuliah</strong>
 	</div>
 	<table class="table">
 		<tr>
-			<td>Nama Mahasiswa</td>
+			<td>Waktu operasi</td>
 			<td>:</td>
-			<td>{{ $jadwal_matakuliah->mahasiswa->nama }}</td>
+			<td>{{ $jadwal->waktu_operasi }}</td>
 		</tr>
 
 		<tr>
-			<td>NIM Mahasiswa</td>
+			<td>Tanggal</td>
 			<td>:</td>
-			<td>{{ $jadwal_matakuliah->mahasiswa->nim }}</td>
+			<td>{{ $jadwal->tanggal }}</td>
 		</tr>
 
 		<tr>
-			<td>Nama Dosen</td>
+			<td>Bidan</td>
 			<td>:</td>
-			<td>{{ $jadwal_matakuliah->dosen_matakuliah->dosen->nama or 'kosong' }}</td>
+			<td>{{ $jadwal->bidan->nama or 'kosong' }}</td>
 		</tr>
 
 		<tr>
 			<td>Ruangan</td>
 			<td>:</td>
-			<td>{{ $jadwal_matakuliah->ruangan->tittle  }}</td>
-		</tr>
-
-		<tr>
-			<td>Nama Matakuliah</td>
-			<td>:</td>
-			<td>{{ $jadwal_matakuliah->dosen_matakuliah->matakuliah->tittle or 'kosong'}}</td>
+			<td>{{ $jadwal->ruangan->nama  }}</td>
 		</tr>
 
 		<tr>
 			<td class="col-xs-4">Dibuat tanggal</td>
 			<td class="col-xs-1">:</td>
-			<td>{{$jadwal_matakuliah->created_at }}</td>
+			<td>{{$jadwal->created_at }}</td>
 		</tr>
 
 		<tr>
 			<td class="col-xs-4">Diperbarui tanggal</td>
 			<td class="col-xs-1">:</td>
-			<td>{{$jadwal_matakuliah->updated_at }}</td>
+			<td>{{$jadwal->updated_at }}</td>
 		</tr>
 	</table>
 </div>

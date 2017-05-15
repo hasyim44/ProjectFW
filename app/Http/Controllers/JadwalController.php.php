@@ -12,14 +12,14 @@ use App\Jadwal;
 use App\Ruangan;
 use App\Bidan;
 
-class JadwalController.php extends Controller
+class JadwalController extends Controller
 {
 	protected $informasi='Gagal aksi';
     public function awal ()
     {
     	// return "Hello dari jadwalController";
-      $semuaJadwalMatakuliah= Jadwal::all();
-      return view('jadwal.awal',compact('semuaJadwalMatakuliah'));
+      $semuaJadwal= Jadwal::all();
+      return view('jadwal.awal',compact('semuaJadwal'));
     }
     public function tambah()
     {

@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\RuanganRequest;
 
 use App\Ruangan;
 
 
-class RuanganController.php extends Controller
+class RuanganController extends Controller
 {
     public function awal ()
     {

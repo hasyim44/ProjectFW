@@ -12,7 +12,9 @@
 		<tr>
 			<th>No.</th>
 			<th>Nama</th>
-			<th>Nip</th>
+			<th>TTL</th>
+			<th>Suami</th>
+			<th>Rekam Medis</th>
 			<th>Aksi</th>
 		</tr>
 	</thead>
@@ -22,7 +24,12 @@
 		@foreach($semuaibu as $ibu)
 		<td>{{ $x++ }}</td>
 		<td>{{ $ibu->nama or 'nama Kosong'}}</td>
-		<td>{{ $ibu->nip or 'nim Kosong'}}</td>
+		<td>{{ $ibu->ttl or 'ttl Kosong'}}</td>
+		<td>{{ $ibu->ayah->nama or 'nama kosong'}}</td>
+		<td>{{ $ibu->rekammedis->tensi_darah or 'tensi_darah kosong'}}</td>
+		<td>{{ $ibu->rekammedis->gula_darah or 'gula_darah kosong'}}</td>
+		<td>{{ $ibu->rekammedis->kondisi or 'kondisi kosong'}}</td>
+		<td>{{ $ibu->rekammedis->kolestrol or 'kolestrol kosong'}}</td>
 		<td>
 			<div class="btn-group" role="group">
 				<Button><a href="{{url('ibu/edit/'.$ibu->id)}}" class="btn btn-warning btn-xs" data-toggle="tooltip" data-placement="top" title="Ubah"><i class="fa fa-pencil"></i></a></Button>

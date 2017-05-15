@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Http\Requests\Ayahequest;
+
 use App\Ayah;
 
 class AyahController extends Controller

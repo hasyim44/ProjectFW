@@ -4,51 +4,45 @@
 
 <div class="panel panel-warning">
 <div class="panel-heading">
-	<strong><a href="{{ url('dosen') }}">
+	<strong><a href="{{ url('ibu') }}">
 	<i style="color:#8a6d3b" class="fa text-default fa-chevron-left"></i></a>
-	Detail Data Dosen</strong>
+	Detail Data ibu</strong>
 	</div>
 	<table class="table">
 		<tr>
 			<td>Nama</td>
 			<td>:</td>
-			<td>{{ $dosen->nama }}</td>
+			<td>{{ $ibu->nama }}</td>
 		</tr>
 
 		<tr>
-			<td>Nip</td>
+			<td>TTL</td>
 			<td>:</td>
-			<td>{{ $dosen->nip }}</td>
+			<td>{{ $ibu->ttl }}</td>
 		</tr>
 
 		<tr>
-			<td>Alamat</td>
+			<td>Nama Suami</td>
 			<td>:</td>
-			<td>{{ $dosen->alamat }}</td>
+			<td>{{ $ibu->ayah->nama }}</td>
 		</tr>
 
 		<tr>
-			<td>Username</td>
+			<td>Rekam Medis</td>
 			<td>:</td>
-			<td>{{ $dosen->pengguna->username }}</td>
-		</tr>
-
-		<tr>
-			<td>Password</td>
-			<td>:</td>
-			<td>{{ $dosen->pengguna->password }}</td>
+			<td>{{ $ibu->rekmamedis->nama }}</td>
 		</tr>
 
 		<tr>
 			<td class="col-xs-4">Dibuat tanggal</td>
 			<td class="col-xs-1">:</td>
-			<td>{{$dosen->created_at }}</td>
+			<td>{{$ibu->created_at }}</td>
 		</tr>
 
 		<tr>
 			<td class="col-xs-4">Diperbarui tanggal</td>
 			<td class="col-xs-1">:</td>
-			<td>{{$dosen->updated_at }}</td>
+			<td>{{$ibu->updated_at }}</td>
 		</tr>
 	</table>
 </div>

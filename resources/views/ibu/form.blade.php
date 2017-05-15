@@ -6,29 +6,22 @@
 </div>
 
 <div class="form-group">
-	<label class="col-sm-2 control-label" id="nama">Nip</label>
+	<label class="col-sm-2 control-label" id="nama">TTL</label>
 	<div class="col-sm-10">
-		{!! Form::text('nip',null,['class'=>'form-control','id'=>'nip','placeholder'=>"Nip"]) !!}
+		{!! Form::text('ttl',null,['class'=>'form-control','id'=>'ttl','placeholder'=>"TTL"]) !!}
 		</div>
 </div>
 
 <div class="form-group">
-	<label class="col-sm-2 control-label" id="nama">Alamat</label>
+	<label class="col-sm-2 control-label" id="id_ayah">Ayah</label>
 	<div class="col-sm-10">
-		{!! Form::textarea('alamat',null,['class'=>'form-control','id'=>'alamat','placeholder'=>"alamat"]) !!}
+		{!! Form::select('id_ayah',$ayah->lists('tittle','id'),null,['class'=>'form-control','id'=>'id_ayah','placeholder'=>"Ayah"]) !!}
 		</div>
 </div>
 
 <div class="form-group">
-	<label class="col-sm-2 control-label" >Username</label>
+	<label class="col-sm-2 control-label" id="id_rekammedis">Rekam Medis</label>
 	<div class="col-sm-10">
-		{!! Form::text('username',null,['class'=>'form-control','placeholder'=>"Username"]) !!}
-		</div>
-</div>
-
-<div class="form-group">
-	<label class="col-sm-2 control-label" >Password</label>
-	<div class="col-sm-10">
-		{!! Form::password('password',null,['class'=>'form-control','placeholder'=>"Password"]) !!}
+		{!! Form::select('id_rekammedis',$ruangan->lists('tittle','id'),null,['class'=>'form-control','id'=>'id_rekammedis','placeholder'=>"Rekam Medis"]) !!}
 		</div>
 </div>

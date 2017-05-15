@@ -6,7 +6,12 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class BayiController.php extends Controller
+use App\Http\Requests\BayiRequest;
+
+use App\Bayi;
+
+
+class BayiController extends Controller
 {
     public function awal ()
     {
