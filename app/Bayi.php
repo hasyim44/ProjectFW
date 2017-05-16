@@ -11,19 +11,19 @@ class Bayi extends Model
 
     public function ibu()
 	{
-		return $this->belongsTo(Ibu::class);
+		return $this->belongsTo('App\Ibu','id_ibu');
 	}
 
 	public function keterangan()
 	{
-		return $this->belongsTo(Keterangan::class);
+		return $this->belongsTo('App\Keterangan','id_keterangan');
 	}
-	public function jadwalb()
+	public function jadwal()
 	{
-		return $this->belongsTo(jadwalb::class);
+		return $this->belongsTo('App\Jadwal','id_jadwal');
 	}public function ruangan()
 	{
-		return $this->belongsTo(ruangan::class);
+		return $this->belongsTo('App\Ruangan','id_ruangan');
 	}
 
 }

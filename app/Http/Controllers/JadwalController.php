@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\JadwalB;
+use App\Jadwal;
 use App\Ruangan;
 use App\Bidan;
 
@@ -15,7 +15,7 @@ class JadwalController extends Controller
     public function awal ()
     {
     	// return "Hello dari JadwalController";
-      $semuaJadwal= JadwalB::all();
+      $semuaJadwal= Jadwal::all();
       return view('jadwal.awal',compact('semuaJadwal'));
     }
     public function tambah()
@@ -27,7 +27,7 @@ class JadwalController extends Controller
     }
     public function simpan(Request $input)
     {
-   	$jadwal = new JadwalB($input->only('ruangan_id','bidan_id'));
+   	$jadwal = new Jadwal($input->only('ruangan_id','bidan_id'));
    	$jadwal->waktu_operasi=$input->waktu_operasi;
    	$jadwal->tanggal=$input->tanggal;
    	  if ($jadwal->save()) $this->informasi = "Jadwal Berhasil Di Simpan";
@@ -35,19 +35,19 @@ class JadwalController extends Controller
     }
     public function edit($id)
     {
-        $jadwal = JadwalB::find($id);
+        $jadwal = Jadwal::find($id);
         $bidan = new bidan;
         $ruangan = new Ruangan;
         return view('jadwal.edit',compact('jadwal','ruangan','bidan','ruangan'));
     }
     public function lihat($id)
     {
-        $jadwal = JadwalB::find($id);
+        $jadwal = Jadwal::find($id);
         return view('jadwal.lihat',compact('jadwal'));
     }
     public function update($id, Request $input)
     {
-        $jadwal = JadwalB::find($id);
+        $jadwal = Jadwal::find($id);
         $jadwal->ruangan_id = $input->ruangan_id;
         $jadwal->bidan_id = $input->bidan_id;
         $jadwal->waktu_operasi=$input->waktu_operasi;
@@ -57,7 +57,7 @@ class JadwalController extends Controller
     }
     public function hapus($id)
     {
-        $jadwal = JadwalB::find($id);
+        $jadwal = Jadwal::find($id);
         $informasi = $jadwal->delete()? 'Berhasil Hapus Data':'Gagal Hapus Data';
        return redirect('jadwal')->with(['informasi'=>$informasi]);
     }

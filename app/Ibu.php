@@ -11,15 +11,15 @@ class Ibu extends Model
     protected $guarded = ['id'];
     public function rekammedis()
 	{
-		return $this->hasMany(RekamMedis::class);
+		return $this->hasMany('App\Rekammedis','id_rekammedis');
 	}
 
 	public function bayi()
 	{
-		return $this->hasMany(Bayi::class);
+		return $this->hasMany('App\Bayi','id_bayi');
 	}
 	public function ayah()
 	{
-		return $this->belongsTo(Ayah::class);
+		return $this->belongsTo('App\Ayah', 'id_ayah');
 	}
 }

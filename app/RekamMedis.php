@@ -11,6 +11,6 @@ class RekamMedis extends Model
     protected $guarded = ['id'];
     public function ibu()
 	{
-		return $this->belongsTo(Ibu::class);
+		return $this->belongsTo('App\Ibu','id_ibu');
 	}
 }

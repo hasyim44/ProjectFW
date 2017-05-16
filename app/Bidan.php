@@ -9,8 +9,8 @@ class Bidan extends Model
     protected $table = 'bidan';
     // protected $fillable = ['nama','tgl'];
     protected $guarded = ['id'];
-    public function jadwalb()
+    public function jadwal()
 	{
-		return $this->hasMany(jadwalb::class);
+		return $this->hasMany('App\jadwal','id_jadwal');
 	}
 }
