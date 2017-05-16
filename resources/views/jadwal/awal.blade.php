@@ -1,4 +1,4 @@
-@extends('master')
+@extends('master_admin')
 @section('container')
 
 
@@ -6,7 +6,7 @@
 <div class="panel-heading">
 	<strong>Seluruh Data Jadwal</strong>
 	<a href="{{ url('jadwal/tambah')}}" class="btn btn-xs btn-primary pull-right">
-	<i class="fa fa-plus"></i>Jadwal</a>
+	<i class="fa fa-plus"></i> Jadwal</a>
 
 		<div class="clearfix"></div>
 	</div>
@@ -14,7 +14,7 @@
 			<thead>
 					<tr>
 						<th>No.</th>
-						<th>waktu Operasi</th>
+						<th>Waktu operasi</th>
 						<th>Tanggal</th>
 						<th>Ruangan</th>
 						<th>Bidan</th>
@@ -26,10 +26,10 @@
 					@foreach ($semuaJadwal as $jadwal)
 						<tr>
 							<td>{{ $x++ }}</td>
-							<td>{{ $jadwal->waktu_operai or 'waktu_operai kosong'}}</td>
+							<td>{{ $jadwal->waktu_operasi or 'waktu_operasi kosong'}}</td>
 							<td>{{ $jadwal->tanggal or 'tanggal kosong'}}</td>
-							<td>{{ $jadwal->ruangan-->nama or  kosong'}}</td>
-							<td>{{ $jadwal->bidan->nama or 'nama kosong'}}</td>
+							<td>{{ $jadwal->ruangan->nama or 'tanggal kosong'}}</td>
+							<td>{{ $jadwal->bidan->nama or 'tanggal kosong'}}</td>
 							<td>
 								<div class="btn-group" role="group">
 								<a href="{{url('jadwal/edit/'.$jadwal->id)}}" class="btn btn-warning btn xs" data-toggle="tooltip" data-placement="top" title="Ubah">

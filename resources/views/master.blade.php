@@ -33,7 +33,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>					
 				</button>
-				<a href="{{url('/')}}" class="navbar-brand">Laravel-5</a>
+				<a href="{{url('/')}}" class="navbar-brand">Home</a>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
@@ -70,6 +70,8 @@
 							<li><a href="{{url('ruangan')}}">Ruangan</a></li>
 							<li class="divider"></li>
 							<li><a href="{{url('keterangan')}}">Keterangan</a></li>
+							<li class="divider"></li>
+							<li><a href="{{url('ayah')}}">Ayah</a></li>
 						</ul>
 					</li>
 					<li><a href="{{url('login')}}">Login</a></li>

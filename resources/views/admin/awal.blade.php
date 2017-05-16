@@ -1,4 +1,4 @@
-@extends('master')
+@extends('master_admin')
 @section('container')
 <div class="panel panel-default	">
 	<div class="panel-heading">

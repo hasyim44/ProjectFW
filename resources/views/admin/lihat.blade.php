@@ -1,5 +1,5 @@
 
-@extends('master')
+@extends('master_admin')
 @section('container')
 
 

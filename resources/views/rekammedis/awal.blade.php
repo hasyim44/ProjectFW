@@ -1,9 +1,9 @@
-@extends('master')
+@extends('master_admin')
 @section('container')
 <div class="panel panel-default	">
 	<div class="panel-heading">
 		<strong>Seluruh Data Rekam Medis</strong>
-		<a href="{{url('rekammedis/tambah')}}" class="btn btn-xs btn-primary pull-right"><i class="fa fa-plus">Rekam Medis</i></a>
+		<a href="{{url('rekammedis/tambah')}}" class="btn btn-xs btn-primary pull-right"><i class="fa fa-plus"> Rekam Medis</i></a>
 	<div class="clearfix"></div>
 	
 </div>
@@ -11,6 +11,7 @@
 	<thead>
 		<tr>
 			<th>No.</th>
+			<th>Nama Ibu</th>
 			<th>Tensi Darah</th>
 			<th>Gula Darah</th>
 			<th>Kondisi</th>
@@ -23,6 +24,7 @@
 		<?php $x=1; ?>
 		@foreach($data as $rekammedis)
 		<td>{{ $x++ }}</td>
+		<td>{{ $rekammedis->ibu->nama or 'nama kosong'}}</td>
 		<td>{{ $rekammedis->tensi_darah or 'Tensi Darah Kosong'}}</td>
 		<td>{{ $rekammedis->gula_darah or 'Gula Darah Kosong'}}</td>
 		<td>{{ $rekammedis->kondisi or 'Kondisi Kosong'}}</td>

@@ -1,4 +1,4 @@
-@extends('master')
+@extends('master_admin')
 @section('container')
 
 
@@ -6,7 +6,7 @@
 <div class="panel-heading">
 	<strong><a href="{{ url('ibu') }}">
 	<i style="color:white;" class="fa text-default fa-chevron-left"></i></a>
-	Tambah Data ibu</strong>
+	Tambah Data Ibu</strong>
 	</div>
 		{!! Form::open(['url'=>'ibu/simpan','class'=>'form-horizontal']) !!}
 		@include('ibu.form')

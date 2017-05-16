@@ -9,25 +9,34 @@ use App\Http\Requests;
 use App\Http\Requests\BayiRequest;
 
 use App\Bayi;
-
-
+use App\Ibu;
+use App\ruangan;
+use App\jadwalb;
+use App\keterangan;
 class BayiController extends Controller
 {
     public function awal ()
     {
-    	// return "Hello dari bayiController";
-      return view('bayi.awal',['data'=>Bayi::all()]);
+    	// return "Hello dari BayiController";
+      $semuaBayi= Bayi::all();
+      return view('bayi.awal',compact('semuaBayi'));
     }
     public function tambah()
    {
-   	   // return $this->simpan();
-      return view('bayi.tambah');
+   	  $ibu = new ibu;
+      $jadwalb = new jadwalb;
+      $ruangan = new ruangan;
+      $keterangan = new keterangan;
+      return view('bayi.tambah', compact('ibu','ruangan','jadwalb','keterangan'));
    }
    public function simpan(Request $input)
    {
    	$bayi = new Bayi();
    	$bayi->nama = $input->nama;
-   	$bayi->ttl = $input->ttl;
+   	$bayi->id_jadwal = $input->id_jadwal;
+    $bayi->id_ibu = $input->id_ibu;
+    $bayi->id_ruangan = $input->id_ruangan;
+    $bayi->id_keterangan = $input->id_keterangan;
    	$informasi = $bayi->save()? 'Berhasil simpan data': 'Gagal Simpan Data';
    	  return redirect ('bayi') ->with (['Informasi'=>$informasi]);
    }
@@ -45,7 +54,7 @@ class BayiController extends Controller
    {
     $bayi = Bayi::find($id);
     $bayi->nama = $input->nama;
-    $bayi->ttl = $input->ttl;
+    $bayi->id_jadwal = $input->id_jadwal;
     $informasi = $bayi->save()? 'Berhasil update data': 'Gagal update Data';
       return redirect ('bayi') ->with (['Informasi'=>$informasi]);
    }

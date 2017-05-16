@@ -10,6 +10,8 @@ use App\Http\Requests\RekamMedisRequest;
 
 use App\RekamMedis;
 
+use App\Ibu;
+
 
 class RekamMedisController extends Controller
 {
@@ -21,11 +23,13 @@ class RekamMedisController extends Controller
     public function tambah()
    {
    	   // return $this->simpan();
-      return view('rekammedis.tambah');
+      $ibu = new Ibu;
+      return view('rekammedis.tambah',compact('ibu'));
    }
    public function simpan(Request $input)
    {
    	$rekammedis = new RekamMedis();
+    $rekammedis->id_ibu = $input->id_ibu;
    	$rekammedis->tensi_darah = $input->tensi_darah;
    	$rekammedis->gula_darah = $input->gula_darah;
    	$rekammedis->kondisi = $input->kondisi;

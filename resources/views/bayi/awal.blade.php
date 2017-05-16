@@ -1,4 +1,4 @@
-@extends('master')
+@extends('master_admin')
 @section('container')
 
 
@@ -6,7 +6,7 @@
 <div class="panel-heading">
 	<strong>Seluruh Data Bayi</strong>
 	<a href="{{ url('bayi/tambah')}}" class="btn btn-xs btn-primary pull-right">
-	<i class="fa fa-plus"></i>Jadwal Bayi</a>
+	<i class="fa fa-plus"></i> Bayi</a>
 
 		<div class="clearfix"></div>
 	</div>
@@ -15,6 +15,7 @@
 					<tr>
 						<th>No.</th>
 						<th>Nama Bayi</th>
+						<th>Jadwal</th>
 						<th>Nama Ibu</th>
 						<th>Ruangan</th>
 						<th>Keterangan</th>
@@ -26,7 +27,8 @@
 					@foreach ($semuaBayi as $bayi)
 						<tr>
 							<td>{{ $x++ }}</td>
-							<td>{{ $bayi->bayi->nama or 'nama kosong'}}</td>
+							<td>{{ $bayi->nama or 'nama kosong'}}</td>
+							<td>{{ $bayi->jadwal->tanggal or 'tanggal kosong'}}</td>
 							<td>{{ $bayi->ibu->nama or 'nama kosong'}}</td>
 							<td>{{ $bayi->ruangan->nama or 'nama kosong'}}</td>
 							<td>{{ $bayi->keterangan->proses_lahir or 'keterangan kosong'}}</td>

@@ -14,6 +14,8 @@ class BuatTableRekamMedis extends Migration
     {
         Schema::create('rekamMedis', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_ibu',false,true);
+            $table->foreign('id_ibu')->references('id')->on('ibu')->onDelete('cascade')->onUpdate('cascade');
             $table->string('tensi_darah');
             $table->string('gula_darah');
             $table->string('kondisi');

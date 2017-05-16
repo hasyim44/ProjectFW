@@ -6,11 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Http\Requests\IbuRequest;
-
 use App\Ibu;
 use App\Ayah;
-use App\RekamMedis;
 
 class IbuController extends Controller
 {
@@ -18,18 +15,19 @@ class IbuController extends Controller
     public function awal ()
     {
     	// return "Hello dari ibuController";
-      $semuaJadwal= Ibu::all();
-      return view('ibu.awal',compact('semuaibu'));
+      $semuaIbu= Ibu::all();
+      return view('ibu.awal',compact('semuaIbu'));
     }
     public function tambah()
     {
         $ayah = new Ayah;
-        $rekammedis = new RekamMedis;
-   	   return view('ibu.tambah', compact('ayah','rekammedis'));
+   	   return view('ibu.tambah', compact('ayah'));
     }
-    public function simpan(IbuRequest $input)
+    public function simpan(Request $input)
     {
-   	$ibu = new Ibu($input->only('id_rekammedis','id_ayah'));
+   	$ibu = new Ibu($input->only('id_ayah'));
+    $ibu->nama  = $input->nama;
+    $ibu->ttl  = $input->ttl;
    	  if ($ibu->save()) $this->informasi = "ibu Berhasil Di Simpan";
    	  return redirect('ibu')->with(['informasi'=>$this->informasi]);
     }
@@ -37,19 +35,19 @@ class IbuController extends Controller
     {
         $ibu = Ibu::find($id);
         $ayah = new Ayah;
-        $rekammedis = new RekamMedis;
-        return view('ibu.edit',compact('ibu','ayah','rekammedis'));
+        return view('ibu.edit',compact('ibu','ayah'));
     }
     public function lihat($id)
     {
         $ibu = Ibu::find($id);
         return view('ibu.lihat',compact('ibu'));
     }
-    public function update($id, ibuRequest $input)
+    public function update($id, Request $input)
     {
         $ibu = Ibu::find($id);
-        $ibu->id_rekammedis = $input->id_rekammedis;
         $ibu->id_ayah = $input->id_ayah;
+        $ibu->nama  = $input->nama;
+        $ibu->ttl  = $input->ttl;
         $informasi = $ibu->save()? 'Berhasil Update Data' : 'Gagal Update Data';
        return redirect('ibu')->with(['informasi'=>$informasi]);
     }

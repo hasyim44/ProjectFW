@@ -1,4 +1,4 @@
-@extends('master')
+@extends('master_admin')
 @section('container')
 
 
@@ -24,13 +24,7 @@
 		<tr>
 			<td>Nama Suami</td>
 			<td>:</td>
-			<td>{{ $ibu->ayah->nama }}</td>
-		</tr>
-
-		<tr>
-			<td>Rekam Medis</td>
-			<td>:</td>
-			<td>{{ $ibu->rekmamedis->nama }}</td>
+			<td>{{ $ibu->ayah->nama or 'kosong' }}</td>
 		</tr>
 
 		<tr>

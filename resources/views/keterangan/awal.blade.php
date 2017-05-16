@@ -1,9 +1,10 @@
-@extends('master')
+@extends('master_admin')
 @section('container')
 <div class="panel panel-default	">
 	<div class="panel-heading">
-		<strong>Seluruh Data proses_lahir</strong>
-		<a href="{{url('proses_lahir/tambah')}}" class="btn btn-xs btn-primary pull-right"><i class="fa fa-plus">proses_lahir</i></a>
+		<strong>Seluruh Data Proses Lahir</strong>
+		<a href="{{url('keterangan/tambah')}}" class="btn btn-xs btn-primary pull-right"><i class="fa fa-plus"> 
+		Proses Lahir</i></a>
 	<div class="clearfix"></div>
 	
 </div>
@@ -18,14 +19,14 @@
 	<tbody>
 	<tr>
 		<?php $x=1; ?>
-		@foreach($data as $proses_lahir)
+		@foreach($data as $keterangan)
 		<td>{{ $x++ }}</td>
-		<td>{{ $proses_lahir->keterangan or 'Keterangan Kosong'}}</td>
+		<td>{{ $keterangan->proses_lahir or 'Keterangan Kosong'}}</td>
 		<td>
 			<div class="btn-group" role="group">
-				<Button><a href="{{url('proses_lahir/edit/'.$proses_lahir->id)}}" class="btn btn-warning btn-xs" data-toggle="tooltip" data-placement="top" title="Ubah"><i class="fa fa-pencil"></i></a></Button>
-				<Button><a href="{{url('proses_lahir/lihat/'.$proses_lahir->id)}}" class="btn btn-info btn-xs" data-toggle="tooltip" data-placement="top" title="Lihat"><i class="fa fa-eye"></i></a></Button>
-				<Button><a href="{{url('proses_lahir/hapus/'.$proses_lahir->id)}}" class="btn btn-danger btn-xs" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa fa-remove"></i></a></Button>
+				<Button><a href="{{url('keterangan/edit/'.$keterangan->id)}}" class="btn btn-warning btn-xs" data-toggle="tooltip" data-placement="top" title="Ubah"><i class="fa fa-pencil"></i></a></Button>
+				<Button><a href="{{url('keterangan/lihat/'.$keterangan->id)}}" class="btn btn-info btn-xs" data-toggle="tooltip" data-placement="top" title="Lihat"><i class="fa fa-eye"></i></a></Button>
+				<Button><a href="{{url('keterangan/hapus/'.$keterangan->id)}}" class="btn btn-danger btn-xs" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa fa-remove"></i></a></Button>
 			</div>
 		</td>	
 		</tr>

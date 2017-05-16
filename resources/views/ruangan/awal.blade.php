@@ -1,9 +1,9 @@
-@extends('master')
+@extends('master_admin')
 @section('container')
 <div class="panel panel-default	">
 	<div class="panel-heading">
 		<strong>Seluruh Data Ruangan</strong>
-		<a href="{{url('ruangan/tambah')}}" class="btn btn-xs btn-primary pull-right"><i class="fa fa-plus">Ruangan</i></a>
+		<a href="{{url('ruangan/tambah')}}" class="btn btn-xs btn-primary pull-right"><i class="fa fa-plus"> Ruangan</i></a>
 	<div class="clearfix"></div>
 	
 </div>

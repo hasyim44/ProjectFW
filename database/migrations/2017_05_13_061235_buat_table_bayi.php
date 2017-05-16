@@ -17,7 +17,6 @@ class BuatTableBayi extends Migration
             $table->string('nama');
             $table->integer('id_ibu',false,true);
             $table->foreign('id_ibu')->references('id')->on('ibu')->onDelete('cascade')->onUpdate('cascade');
-            $table->timestamps();
             $table->integer('id_ruangan',false,true);
             $table->foreign('id_ruangan')->references('id')->on('ruangan')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('id_jadwal',false,true);

@@ -14,12 +14,12 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', function () {
-    return view('master');
- });
 // Route::get('/', function () {
-//     return view('master_admin');
+//     return view('master');
 //  });
+Route::get('/', function () {
+    return view('master_admin');
+ });
 
 Route::get('admin','Admin@awal');
 Route::get('admin/tambah','AdminController@tambah');
@@ -71,7 +71,7 @@ Route::post('keterangan/simpan','KeteranganController@simpan');
 Route::get('keterangan/edit/{keterangan}','KeteranganController@edit');
 Route::post('keterangan/edit/{keterangan}','KeteranganController@update');
 Route::get('keterangan/hapus/{keterangan}','KeteranganController@hapus');
-Route::get('keterangan/lihat/{keterangan}','KeteranganController@hapus');
+Route::get('keterangan/lihat/{keterangan}','KeteranganController@lihat');
 
 Route::get('jadwal','JadwalController@awal');
 Route::get('jadwal/tambah','JadwalController@tambah');

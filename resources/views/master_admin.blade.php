@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charshet="UTF-8">		
-	<title>@yield('page_tittle','Halaman Admin') ||  Bidan Kita</title>
+	<title>@yield('page_tittle')  Bidan Kita</title>
 	<link rel="stylesheet" type="text/css" href="{{asset('component/bootstrap/dist/css/bootstrap.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('component/font-awesome/css/font-awesome.min.css')}}">
 	<style type="text/css">
@@ -33,35 +33,36 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>					
 				</button>
-				<a href="{{url('/')}}" class="navbar-brand">Laravel-5</a>
+				<a href="{{url('/')}}" class="navbar-brand">Home</a>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li class="dropdown active">
-						<a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Data <span class="caret"></span></a>
+						<a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profil <span class="caret"></span></a>
 						<ul class="dropdown-menu" aria-labelledby="dLabel">
-							<li><a href="{{url('mahasiswa')}}">Bidan</a></li>
+							<li><a href="{{url('bidan')}}">Bidan Kita</a></li>
 							<li class="divider"></li>
-							<li><a href="{{url('jadwal_matakuliah')}}">Jadwal</a></li>
+							<li><a href="{{url('jadwal')}}">Jadwal</a></li>
 							<li class="divider"></li>
-							<li><a href="{{url('jadwal_matakuliah')}}">Visi dan Misi</a></li>
+							<li><a href="{{url('visimisi')}}">Visi dan Misi</a></li>
 						</ul>
 					</li>
 					<li class="dropdown active">
 						<a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kehamilan <span class="caret"></span></a>
 						<ul class="dropdown-menu" aria-labelledby="dLabel">
-							<li><a href="{{url('mahasiswa')}}">Ibu</a></li>
+							<li><a href="{{url('ibu')}}">Ibu</a></li>
 							<li class="divider"></li>
-							<li><a href="{{url('jadwal_matakuliah')}}">Bayi</a></li>
-							
+							<li><a href="{{url('bayi')}}">Bayi</a></li>
+							<li class="divider"></li>
+							<li><a href="{{url('rekammedis')}}">Rekam Medis</a></li>
 						</ul>
 					</li>
 					<li class="dropdown active">
 						<a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tips Kesehatan<span class="caret"></span></a>
 						<ul class="dropdown-menu" aria-labelledby="dLabel">
-							<li><a href="{{url('dosen')}}">Buah Hati</a></li>
+							<li><a href="{{url('bayi')}}">Buah Hati</a></li>
 							<li class="divider"></li>
-							<li><a href="{{url('dosen_matakuliah')}}">Bunda</a></li>
+							<li><a href="{{url('ibu')}}">Bunda</a></li>
 						</ul>
 					</li>
 					<li class="dropdown active">
@@ -69,7 +70,9 @@
 						<ul class="dropdown-menu" aria-labelledby="dLabel">
 							<li><a href="{{url('ruangan')}}">Ruangan</a></li>
 							<li class="divider"></li>
-							<li><a href="{{url('matakuliah')}}">Keterangan</a></li>
+							<li><a href="{{url('keterangan')}}">Keterangan</a></li>
+							<li class="divider"></li>
+							<li><a href="{{url('ayah')}}">Ayah</a></li>
 						</ul>
 					</li>
 					<li><a href="{{url('logout')}}">Logout</a></li>

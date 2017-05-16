@@ -1,13 +1,13 @@
-@extends('master')
+@extends('master_admin')
 @section('container')
 <div class="panel panel-info">
 <div class="panel-heading">
-	<strong><a href="{{ url('proses_lahir') }}">
+	<strong><a href="{{ url('keterangan') }}">
 	<i style="color:white;" class="fa text-default fa-chevron-left"></i>Perbarui Data Proses Lahiran</a>
 	</strong>
 	</div>
-		{!! Form::model($proses_lahir,['url'=>'proses_lahir/edit/'.$proses_lahir->id,'class'=>'form-horizontal']) !!}
-		@include('proses_lahir.form')
+		{!! Form::model($keterangan,['url'=>'keterangan/edit/'.$keterangan->id,'class'=>'form-horizontal']) !!}
+		@include('keterangan.form')
 		<div style="width: 100%;text-align: right;">
 				<button class="btn btn-info"><i class="fa fa-save"></i>Perbarui</button>
 				<button type"reset" class="btn btn-danger"><i class="fa fa-undo"></i>Ulangi</button>

@@ -1,9 +1,9 @@
-@extends('master')
+@extends('master_admin')
 @section('container')
 <div class="panel panel-default	">
 	<div class="panel-heading">
-		<strong>Seluruh Data ayah</strong>
-		<a href="{{url('ayah/tambah')}}" class="btn btn-xs btn-primary pull-right"><i class="fa fa-plus">ayah</i></a>
+		<strong>Seluruh Data Ayah</strong>
+		<a href="{{url('ayah/tambah')}}" class="btn btn-xs btn-primary pull-right"><i class="fa fa-plus"> Ayah</i></a>
 	<div class="clearfix"></div>
 	
 </div>
@@ -19,10 +19,10 @@
 	<tbody>
 	<tr>
 		<?php $x=1; ?>
-		@foreach($semuaayah as $ayah)
+		@foreach($data as $ayah)
 		<td>{{ $x++ }}</td>
 		<td>{{ $ayah->nama or 'nama Kosong'}}</td>
-		<td>{{ $ayah->nip or 'nim Kosong'}}</td>
+		<td>{{ $ayah->ttl or 'ttl Kosong'}}</td>
 		<td>
 			<div class="btn-group" role="group">
 				<Button><a href="{{url('ayah/edit/'.$ayah->id)}}" class="btn btn-warning btn-xs" data-toggle="tooltip" data-placement="top" title="Ubah"><i class="fa fa-pencil"></i></a></Button>

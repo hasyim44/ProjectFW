@@ -8,6 +8,6 @@
 <div class="form-group">
 	<label class="col-sm-2 control-label" id="nama">TTL</label>
 	<div class="col-sm-10">
-		{!! Form::text('ttl',null,['class'=>'form-control','id'=>'ttl','placeholder'=>"TTL"]) !!}
+		{!! Form::date('ttl',null,['class'=>'form-control','id'=>'ttl','placeholder'=>"TTL"]) !!}
 		</div>
 </div>
