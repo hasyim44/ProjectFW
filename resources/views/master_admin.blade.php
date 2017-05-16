@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charshet="UTF-8">		
-	<title>@yield('page_tittle')  Bidan Kita</title>
+	<title>@yield ('page_tittle','Halaman Awal') | Bidan Kita</title>
 	<link rel="stylesheet" type="text/css" href="{{asset('component/bootstrap/dist/css/bootstrap.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('component/font-awesome/css/font-awesome.min.css')}}">
 	<style type="text/css">

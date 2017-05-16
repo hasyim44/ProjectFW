@@ -1,26 +1,10 @@
 <?php
-
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-// Route::get('/', function () {
-//     return view('master');
-//  });
-Route::get('/', function () {
-    return view('master_admin');
- });
-
+Route::get('/login','SessiController@form');
+Route::post('/login','SessiController@validasi');
+Route::get('/logout','SessiController@logout');
+Route::get('/','SessiController@index');
+Route::group(['middleware'=>'AutentifikasiUser'],function()
+{
 Route::get('admin','Admin@awal');
 Route::get('admin/tambah','AdminController@tambah');
 Route::post('admin/simpan','AdminController@simpan');
@@ -99,3 +83,25 @@ Route::get('ruangan/edit/{ruangan}','RuanganController@edit');
 Route::post('ruangan/edit/{ruangan}','RuanganController@update');
 Route::get('ruangan/hapus/{ruangan}','RuanganController@hapus');
 Route::get('ruangan/lihat/{ruangan}','RuanganController@lihat');
+});
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register all of the routes for an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the controller to call when that URI is requested.
+|
+*/
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// Route::get('/', function () {
+//     return view('master');
+  //});
+Route::get('/', function () {
+    return view('master');
+ });
+
